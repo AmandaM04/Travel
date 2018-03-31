@@ -57,7 +57,7 @@ const printToDom = (domString, divId) => {
 const buildDomString = (placesArray) => {
     let domString = '';
     placesArray.forEach((place) => {
-        domString += `<div class="card">`;
+       domString += `<div class="card">`;
        domString +=     `<h1>${place.title}</h1>`;
        domString +=     `<p>${place.description}</p>`;
        domString +=     `<img class="image" src="${place.image}" alt="">`;
@@ -72,7 +72,7 @@ const addAllEventListeners = () => {
     const allTheButtons = document.getElementByClassName('card-button');
 
     for (let i=0; i < allTheButtons.length; i++) {
-        allTheButtons [i].addEventListener('click', e);
+        allTheButtons[i].addEventListener('click', e);
     }
 };
 buildDomString(coolPlaces);
