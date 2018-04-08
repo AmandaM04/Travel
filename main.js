@@ -50,29 +50,50 @@ const coolPlaces = [
 ];
 
 const printToDom = (domString, divId) => {
-    const printTo = document.getElementById(divId);
-    printTo.innerHTML = domString;
+    document.getElementById(divId).innerHTML += domString;
 };
 
 const buildDomString = (placesArray) => {
     let domString = '';
     placesArray.forEach((place) => {
-        domString += `<div class="card">`;
+       domString += `<div class="card">`;
        domString +=     `<h1>${place.title}</h1>`;
-       domString +=     `<p>${place.description}</p>`;
+       domString +=     `${place.description}`;
        domString +=     `<img class="image" src="${place.image}" alt="">`;
-       domString +=     `<input type="text">`;
+       domString +=     `<textarea cols="30" rows="10"></textarea>`;
        domString +=     `<button class="card-button">Submit</button>`;
        domString +=  `</div>`;
     });
-    printToDom(domString, 'card-holder');
+    printToDom(domString, "card-holder");
 };
 
 const addAllEventListeners = () => {
-    const allTheButtons = document.getElementByClassName('card-button');
+  
+    const allTheButtons = document.getElementsByClassName('card-button');
 
     for (let i=0; i < allTheButtons.length; i++) {
-        allTheButtons [i].addEventListener('click', e);
+        allTheButtons[i].addEventListener('click', (e) => {
+            //Get diary entry from text box above button clicked
+            let input = e.target.previousElementSibling.value;
+            //Get Place Title
+            let inputTitle = e.target.parentElement.firstElementChild.textContent;
+            buildDiaryEntry(input, inputTitle);
+            //reset text box to empty
+            e.target.previousElementSibling.value = '';
+        });
     }
 };
+
+const buildDiaryEntry = (input, inputTitle) => {
+    let domString = '';
+       domString += `<div class="diary">`;
+       domString +=     `<h1>${inputTitle}</h1>`;
+       domString +=     `<p>${input}</p>`;
+       domString +=  `</div>`;
+
+    printToDom(domString, "diary-entry");
+
+}
+
 buildDomString(coolPlaces);
+addAllEventListeners();
