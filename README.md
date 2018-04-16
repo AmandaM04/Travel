@@ -4,8 +4,8 @@
 Chose locations where we want to visit and printed cards. User is able to type text inside the input fields and information will appear inside a diary under the cards. Any additional information about this location will also appear under the cards in a separate diary entry. Text fields clear once the user presses submit.
 
 ## Screenshot
-![webpage](https://raw.githubusercontent.com/AmandaM04/Travel/master/screenshots/Screen%20Shot%202018-04-16%20at%205.25.46%20PM.png)
-(https://raw.githubusercontent.com/AmandaM04/Travel/master/screenshots/Screen%20Shot%202018-04-16%20at%205.26.19%20PM.png)
+![webpage](https://raw.githubusercontent.com/AmandaM04/Travel/master/screenshots/Screen%20Shot%202018-04-16%20at%205.25.46%20PM.png
+https://raw.githubusercontent.com/AmandaM04/Travel/master/screenshots/Screen%20Shot%202018-04-16%20at%205.26.19%20PM.png)
 
 ## How To Run
 1. Clone down this repo, and cd into the project
